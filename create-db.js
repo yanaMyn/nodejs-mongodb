@@ -1,7 +1,6 @@
-var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/mydb";
+var conn = require('./connection');
 
-MongoClient.connect(url, { useUnifiedTopology: true }, function(err, db) {
+conn.MongoClient.connect(conn.Url, { useUnifiedTopology: true }, (err, db) => {
     if (err) throw err;
     console.log("Database created!");
     db.close();
